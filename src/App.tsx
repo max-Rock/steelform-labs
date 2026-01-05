@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import Video from './Video';
+import Materials from './Materials';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Header />
+      <div className="hero-section">
+          <div className="main-content">
+              <div className="main-left">
+                  <p className="proven-text">PROVEN AND TESTED</p>
+                  <h1 className="main-title">The most durable parts on the market</h1>
+                  <div className="tags">
+                      <span>STEEL</span>
+                      <span>ALUMINUM</span>
+                      <span>TITANIUM</span>
+                  </div>
+              </div>
+              <div className="main-right">
+                  <img src="/images/part.webp" alt="Metal Part" className="part-image" />
+                  <p className="side-text">Our parts are lighter, stronger, and more cost-effective than any others.</p>
+                  <button className="equipment-button">
+                      Explore Equipment
+                      <span className="arrow">→</span>
+                  </button>
+              </div>
+          </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Video />
+      <Materials />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
