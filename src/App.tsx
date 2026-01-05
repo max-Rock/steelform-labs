@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './Header';
 import Services from './Services';
+import Materials from './Materials';
+import Footer from './Footer';
 import './App.css';
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
         </div>
       </div>
       <Services />
+      <Materials />
+      <Footer />
     </div>
   );
 }
