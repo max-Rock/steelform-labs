@@ -18,9 +18,8 @@
   top: -120px;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 1.5rem;
+.logo img {
+  height: 35px;
 }
 
 .nav {
@@ -69,6 +68,10 @@
 }
 
 @media (max-width: 1024px) {
+  .logo img {
+    height: 30px;
+  }
+
   .nav {
     flex-direction: column;
     position: absolute;
@@ -122,5 +125,11 @@
     border-radius: 20px;
     font-weight: bold;
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 25px;
   }
 }

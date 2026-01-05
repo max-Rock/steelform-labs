@@ -10,7 +10,9 @@ const Footer = () => {
             <button className="contact-button">Join Here</button>
         </div>
         <div className="footer-bottom">
-            <div className="footer-logo">Steelform Labs</div>
+            <div className="footer-logo">
+              <img src="/logo.webp" alt="Steelform Labs Logo" />
+            </div>
         </div>
       </div>
       <img src="/images/footerImg.webp" alt="Metal fabrication" className="footer-image" />

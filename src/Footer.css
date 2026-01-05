@@ -63,7 +63,18 @@
     font-weight: bold;
 }
 
+.footer-logo img {
+  height: 35px;
+}
+
+
 /* Mobile Styles */
+@media (max-width: 1024px) {
+  .footer-logo img {
+    height: 30px;
+  }
+}
+
 @media (max-width: 767px) {
     .footer {
         padding: 60px 20px;
@@ -96,4 +107,10 @@
     .footer-title {
         font-size: 2.5rem;
     }
+}
+
+@media (max-width: 480px) {
+  .footer-logo img {
+    height: 25px;
+  }
 }

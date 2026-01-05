@@ -31,7 +31,9 @@ function Header() {
 
   return (
     <header className={`header ${visible || menuOpen ? '' : 'hidden'}`}>
-      <div className="logo">Steelform Labs</div>
+      <div className="logo">
+        <img src="/logo.webp" alt="Steelform Labs Logo" />
+      </div>
       <div className="hamburger" onClick={toggleMenu}>
         {menuOpen ? <X size={32} color="white" /> : <List size={32} color="white" />}
       </div>
