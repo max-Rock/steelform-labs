@@ -55,7 +55,6 @@ function Services() {
         <button className="get-started-button">
           Upload CAD File <DownloadSimple className="arrow" />
         </button>
-        <p>Formats: STEP, IGES, STL, DXF, DWG</p>
         <p className="services-subtitle"> Formats: STEP, IGES, STL, DXF, DWG</p>
       </div>
     </section>

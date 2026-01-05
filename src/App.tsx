@@ -4,6 +4,7 @@ import Services from './Services';
 import Materials from './Materials';
 import Footer from './Footer';
 import './App.css';
+import { ArrowRight } from 'phosphor-react';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
               When you need a part tomorrow, we’ll help you get it there.
             </p>
             <button className="equipment-button">
-              Get Started <span className="arrow">→</span>
+              Get Started <ArrowRight className="arrow" />
             </button>
           </div>
         </div>

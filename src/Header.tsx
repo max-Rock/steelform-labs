@@ -1,23 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
+import { List, X } from 'phosphor-react';
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const isScrolledUp = prevScrollPos > currentScrollPos;
+
+      if (!menuOpen) {
+        setVisible(isScrolledUp || currentScrollPos < 10);
+      }
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos, menuOpen]);
+
   return (
-    <header className="header">
+    <header className={`header ${visible || menuOpen ? '' : 'hidden'}`}>
       <div className="logo">Steelform Labs</div>
-      <nav className="nav">
+      <div className="hamburger" onClick={toggleMenu}>
+        {menuOpen ? <X size={32} color="white" /> : <List size={32} color="white" />}
+      </div>
+      <nav className={`nav ${menuOpen ? 'open' : ''}`}>
         <a href="#">About</a>
         <a href="#">Products</a>
-        {/* <a href="#">Sectors +</a> */}
         <a href="#">Services</a>
-        <a href="#">Case Studies</a>
-        {/* <a href="#">News</a> */}
-        {/* <a href="#">Sustainability</a> */}
-        <a href="#">Contact</a>
+        <div className="actions-mobile">
+          <button className="login-button">Log in</button>
+        </div>
       </nav>
       <div className="actions">
-        <a href="#" className="login">Log in</a>
-        <button className="book-call">Book a call</button>
+        <button className="login-button">Log in</button>
       </div>
     </header>
   );

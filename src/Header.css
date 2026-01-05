@@ -3,9 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 20px;
-  background-color: #9effa1;
-  color: #000000;
-  border-bottom: 1px solid #e0e0e0;
+  background-color: #000000;
+  color: #ffffff;
   position: fixed;
   top: 0;
   left: 0;
@@ -24,8 +23,13 @@
   font-size: 1.5rem;
 }
 
+.nav {
+  display: flex;
+  align-items: center;
+}
+
 .nav a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
   margin: 0 15px;
   font-weight: 500;
@@ -36,17 +40,10 @@
   align-items: center;
 }
 
-.login {
+.login-button {
+  background-color: #ffffff;
   color: #000000;
-  text-decoration: none;
-  margin-right: 20px;
-  font-weight: 500;
-}
-
-.book-call {
-  background-color: #000000;
-  color: #ffffff;
-  border: 1px solid #000000;
+  border: 1px solid #ffffff;
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
@@ -56,51 +53,46 @@
 
 .hamburger {
   display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
   cursor: pointer;
-  position: absolute;
-  right: 20px;
-  top: 15px;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.mobile-actions {
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+}
+
+.actions-mobile {
   display: none;
 }
 
 @media (max-width: 1024px) {
   .nav {
-    box-sizing: border-box;
-    display: flex;
     flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #9effa1;
-    padding-left: 0;
+    background-color: #000000;
+    padding: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
-    align-items: stretch;
-    gap: 0;
+    transition: max-height 0.3s ease-in-out;
+    align-items: flex-start;
   }
 
   .nav.open {
     max-height: 500px;
-    padding-top: 20px;
-    padding-bottom: 0;
   }
 
   .nav a {
-    margin: 0;
-  }
-
-  .nav > a {
     padding: 15px 20px;
     text-align: left;
-    font-weight: bold;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .actions {
@@ -108,40 +100,27 @@
   }
 
   .hamburger {
-    display: block;
+    display: flex;
   }
 
-  .mobile-actions {
+  .actions-mobile {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    margin-top: 15px;
     width: 100%;
-    gap: 0;
+    padding: 15px 0;
   }
 
-  .mobile-actions .login,
-  .mobile-actions .book-call {
-    padding: 20px 20px;
-    text-align: left;
-    width: 100%;
+  .actions-mobile .login-button {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    text-align: center;
+    padding: 15px 20px;
     box-sizing: border-box;
-    border-radius: 0;
-    margin: 0;
-    color: #ffffff;
-    font-weight: bold;
-  }
-  
-  .mobile-actions .login {
-    background-color: #222222; 
-    text-decoration: none;
-  }
-
-  .mobile-actions .book-call {
-    background-color: #000000;
     border: none;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 20px;
     font-weight: bold;
     font-size: 1rem;
-    cursor: pointer;
   }
 }
