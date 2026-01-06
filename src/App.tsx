@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import Home from './pages/Home';
@@ -8,7 +8,7 @@ import './App.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import ScrollToTop from './components/ScrollToTop';
 
-function App() {
+function AppContent() {
   const location = useLocation();
 
   return (
@@ -32,6 +32,14 @@ function App() {
       </AnimatePresence>
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 
