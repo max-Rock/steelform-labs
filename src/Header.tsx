@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { List, X } from 'phosphor-react';
+import { Link } from 'react-router-dom';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,13 +33,15 @@ function Header() {
   return (
     <header className={`header ${visible || menuOpen ? '' : 'hidden'}`}>
       <div className="logo">
-        <img src="/logo.webp" alt="Steelform Labs Logo" />
+        <Link to="/">
+          <img src="/logo.webp" alt="Steelform Labs Logo" />
+        </Link>
       </div>
       <div className="hamburger" onClick={toggleMenu}>
         {menuOpen ? <X size={32} color="white" /> : <List size={32} color="white" />}
       </div>
       <nav className={`nav ${menuOpen ? 'open' : ''}`}>
-        <a href="#">About</a>
+        <Link to="/about">About</Link>
         <a href="#">Products</a>
         <a href="#">Services</a>
         <div className="actions-mobile">

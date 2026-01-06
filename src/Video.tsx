@@ -8,10 +8,10 @@ const Video = () => {
         <source src="/videos/production.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
-      <div className="video-text-content">
+      {/* <div className="video-text-content">
         <h1>We got your back</h1>
         <p>With our inhouse manufacturing</p>
-      </div>
+      </div> */}
     </div>
   );
 };

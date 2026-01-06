@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -11,7 +12,9 @@ const Footer = () => {
         </div>
         <div className="footer-bottom">
             <div className="footer-logo">
-              <img src="/logo.webp" alt="Steelform Labs Logo" />
+              <Link to="/">
+                <img src="/logo.webp" alt="Steelform Labs Logo" />
+              </Link>
             </div>
         </div>
       </div>

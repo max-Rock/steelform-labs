@@ -23,6 +23,9 @@
 }
 
 .nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
 }
@@ -84,6 +87,7 @@
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
     align-items: flex-start;
+    transform: none; 
   }
 
   .nav.open {
