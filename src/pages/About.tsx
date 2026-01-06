@@ -1,4 +1,3 @@
-import React from 'react';
 import Video from '../Video';
 import './About.css';
 import ScrollAnimation from '../components/ScrollAnimation';

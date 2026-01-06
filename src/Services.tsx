@@ -1,4 +1,3 @@
-import React from 'react';
 import './Services.css';
 import { ArrowRight, DownloadSimple } from 'phosphor-react';
 

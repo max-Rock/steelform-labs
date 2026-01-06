@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ArrowRight } from 'phosphor-react';
 import './Materials.css';
 
