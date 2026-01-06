@@ -13,6 +13,13 @@ function Header() {
     setMenuOpen(!menuOpen);
   };
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.location.reload();
+    }
+  };
+
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
@@ -38,7 +45,7 @@ function Header() {
   return (
     <header className={`header ${visible || menuOpen ? '' : 'hidden'}`}>
       <div className="logo">
-        <Link to="/">
+        <Link to="/" onClick={handleLogoClick}>
           <img src="/logo.webp" alt="Steelform Labs Logo" />
         </Link>
       </div>

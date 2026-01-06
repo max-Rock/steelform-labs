@@ -7,6 +7,7 @@ import About from './pages/About';
 import ServicesPage from './pages/ServicesPage';
 import './App.css';
 import { motion, AnimatePresence } from 'framer-motion';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const location = useLocation();
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <ScrollToTop />
       <AnimatePresence mode="wait">
         <motion.div
           key={location.pathname}
