@@ -1,25 +1,53 @@
-# Steelform Labs Website Blueprint
+# Steelform Labs - Blueprint
 
 ## Overview
 
-This document outlines the design, features, and development plan for the Steelform Labs corporate website. The site is a modern, single-page application built with React and Vite, showcasing the company's mission to rebuild America's metal independence.
+This document outlines the blueprint for the Steelform Labs website, a modern and interactive web application built with React, Vite, and Framer Motion. The website is designed to showcase the company's services, materials, and portfolio in a visually appealing and user-friendly manner.
 
-## Project Outline
+## Project Structure
 
-### Version 1.0: Initial Build
+- `src/`
+  - `components/`: Reusable components like `ScrollAnimation`, `ScrollToTop`.
+  - `pages/`: Page components like `Home`, `About`, `ServicesPage`.
+  - `App.tsx`: Main application component with routing.
+  - `main.tsx`: Application entry point.
+  - `index.css`: Global styles.
+  - `Header.tsx`: Header component.
+  - `Footer.tsx`: Footer component.
+  - `Services.tsx`: Services section component.
+  - `Materials.tsx`: Materials section component.
+  - `Banner.tsx`: Banner component.
 
-*   **Header:**
-    *   A clean, minimalist header containing the company logo, "Steelform Labs."
-    *   Styled with a black background, white text, and a `max-width` of `1200px` for a consistent, centered look.
-    *   Fully responsive, with a hamburger menu for seamless navigation on screens smaller than `1024px`.
-*   **Hero Section:**
-    *   A full-screen hero section designed to make a bold first impression.
-    *   Features a compelling headline: "Let's rebuild America's metal independence."
-    *   Includes a prominent "Contact Us" button to drive user engagement.
-    *   A high-impact background image of metal fabrication is displayed on the right side, occupying 50% of the screen width on desktops.
-    *   The left side, containing the headline and button, has a solid black background.
-    *   On screens smaller than `1024px`, the layout stacks vertically, with the content centered.
-*   **Footer:**
-    *   A full-width, responsive footer with a sophisticated layout.
-    *   **Desktop & Tablet (768px and up):** A two-column design with left-aligned text content and a full-height image on the right.
-    *   **Mobile (below 768px):** A layered design where the left-aligned text content is placed directly on top of the full-width footer image. A dark overlay ensures text readability while maintaining a modern aesthetic.
+## Design and Styling
+
+- **Styling:** CSS with a modern, clean design.
+- **Animations:** Framer Motion for smooth page transitions and scroll animations.
+- **Icons:** Phosphor Icons for a clean and modern look.
+
+## Features
+
+- **Routing:** `react-router-dom` for seamless navigation between pages.
+- **Smooth Scrolling:** A `ScrollToTop` component ensures that navigation to a new page starts at the top.
+- **Animations:** Page transitions and scroll-based animations to enhance user experience.
+- **Responsive Design:** The website is designed to be responsive and work on different screen sizes.
+
+## Fixes
+
+### Routing Issue
+
+- **Problem:** The application was not starting on the homepage after a hot restart.
+- **Solution:** Refactored the routing logic to ensure that `BrowserRouter` wraps the `App` component at the root level in `App.tsx` and not in `main.tsx`.
+
+### Homepage Reload Scroll Behavior
+
+- **Problem:** Clicking the logo on the homepage would reload the page but maintain the current scroll position, instead of starting from the top.
+- **Solution:** Implemented a click handler on the logo in both the header and footer. When on the homepage, this handler prevents the default React Router navigation and instead forces a full browser navigation to the root URL (`window.location.href = '/'`). This action triggers a page reload and resets the scroll position to the top.
+
+## Current Task: Create Services Page
+
+### Plan
+
+1.  **Create `ServicesPage.tsx`:** Create a new page component for the services page.
+2.  **Add Services Content:** Add the content for the services page, including a title and a list of services.
+3.  **Create a route for the services page:** Add a new route in `App.tsx` to handle the services page.
+4.  **Add a link to the services page in the header:** Add a link to the services page in the `Header.tsx` component.

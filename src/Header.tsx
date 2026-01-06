@@ -16,7 +16,7 @@ function Header() {
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (location.pathname === '/') {
       e.preventDefault();
-      window.location.reload();
+      window.location.href = '/';
     }
   };
 
